@@ -1,0 +1,134 @@
+zad1
+
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "czyZdany":false}' http://localhost:8098/buckets/s21960/keys/nbd;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 13:52:05 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Systemy rozproszone i integracja uslug", "skrot":"SRI", "semestr": 2, "czyZdany":false}' http://localhost:8098/buckets/s21960/keys/sri;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 13:54:01 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Zarzadzanie bazami danych", "skrot":"ZBD", "semestr": 1, "czyZdany":true}' http://localhost:8098/buckets/s21960/keys/zbd;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 13:54:26 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Technologie i platformy chmury obliczeniowej", "skrot":"TPC", "semestr": 2, "czyZdany":true}' http://localhost:8098/buckets/s21960/keys/tpc;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:02:16 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/tpc
+{"przedmiot":"Technologie i platformy chmury obliczeniowej", "skrot":"TPC", "semestr": 2, "czyZdany":true}root@fe0def6551a9:/#
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Zaawansowane modelowanie i analiza systemwww informatycznych", "skrot":"ZMA", "semestr": 2, "czyZdany":true}' http://localhost:8098/buckets/s21960/keys/zma;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:02:56 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+
+zad 2
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "czyZdany":"false"}root@fe0def6551a9:/#   
+
+
+
+zad 3
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "czyZdany":false, "prowadzacy":"Tomasz Pieciukiewicz"}' http://localhost:8098/buckets/s21960/keys/nbd;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:11:47 GMT
+Content-Type: application/json
+Content-Length: 0
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "czyZdany":false, "prowadzacy":"Tomasz Pieciukiewicz"}root@fe0def6551a9:/#  
+
+
+zad 4
+
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}' http://localhost:8098/buckets/s21960/keys/nbd;
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:14:09 GMT
+Content-Type: application/json
+Content-Length: 0
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}root@fe0def6551a9:/#  
+
+
+zad 5
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne bazy danych", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}root@fe0def6551a9:/#
+root@fe0def6551a9:/# curl -XPUT -i -H "Content-Type: application/json" -d '{"przedmiot":"Nierelacyjne BD", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}' http://localhost:8098/buckets/s21960/keys/nbd
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:16:50 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne BD", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}root@fe0def6551a9:/#  
+
+
+
+zad 6 i 7
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+{"przedmiot":"Nierelacyjne BD", "skrot":"NBD", "semestr": 2, "prowadzacy":"Tomasz Pieciukiewicz"}root@fe0def6551a9:/#
+root@fe0def6551a9:/# curl -i -XDELETE http://localhost:8098/buckets/s21960/keys/nbd
+HTTP/1.1 204 No Content
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 28 Jun 2020 14:18:08 GMT
+Content-Type: application/json
+Content-Length: 0
+
+root@fe0def6551a9:/# curl http://localhost:8098/buckets/s21960/keys/nbd
+not found
+root@fe0def6551a9:/#  
+
+
+
+zad 8
+
+root@fe0def6551a9:/# curl -POST -i -H "Content-Type: application/json" -d '{"przedmiot": "Lamiglowki"}' http://localhost:8098/buckets/s21960/keys/
+HTTP/1.1 201 Created
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Location: /buckets/s21960/keys/OPcDknHMsSMAGewWw8gLmRxr0Dr
+Date: Sun, 28 Jun 2020 14:21:15 GMT
+Content-Type: application/json
+Content-Length: 0
+
+
